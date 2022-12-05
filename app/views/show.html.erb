@@ -33,9 +33,8 @@
 
           </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
+          <%= render "comments/form", comment: Comment.new(photo_id: photo.id) %>
+          <!--can also photo.comments.build instead of photo_id: photo.id) -->
       </div>
     </div>
   </div>
