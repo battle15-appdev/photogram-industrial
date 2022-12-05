@@ -26,10 +26,8 @@
     </div>
   </div>
 
+<%= current_user.liked_photos.count %>
 
-<h2>Own Photos</h2>
-
-<%= current_user.own_photos.count %>
-<% current_user.own_photos.each do |black|%>
-  <%= render "photos/photo", blue:black%>
+<% current_user.own_photos.each do |photo|%>
+  <%= render "photos/photo", blue: photo%>
 <% end %>
