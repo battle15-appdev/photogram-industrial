@@ -14,12 +14,19 @@
   </head>
 
   <body>
-  <!--flex-wrap: nowrap; in .navbar-expand-lg makes the page wonky-->
+    <!--flex-wrap: nowrap; in .navbar-expand-lg makes the page wonky-->
     <%= render "shared/navbar"%>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="container">
+
+      <% if notice.present?%>
+        <%= render "shared/flash", message: notice, css_class: "success" %>
+      <% end %>
+
+      <% if alert.present?%>
+        <%= render "shared/flash", message: alert, css_class: "danger" %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
